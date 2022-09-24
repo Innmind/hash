@@ -31,7 +31,7 @@ $hashes = Factory::build()
 $hashes; // Set<Value>
 ```
 
-Since the computation doesn't rely on the filesystem it can be called on content that is not on the filesystem.
+Since the computation doesn't rely on the filesystem it can be called on content that is not on the filesystem and that cannot be fitted in memory.
 
 Examples:
 
