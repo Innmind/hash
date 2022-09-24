@@ -15,6 +15,7 @@ use Innmind\Immutable\{
 enum Hash
 {
     case md5;
+    case sha1;
     case sha256;
     case sha512;
 
