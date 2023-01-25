@@ -27,4 +27,9 @@ final class Value
     {
         return $this->hex;
     }
+
+    public function binary(): string
+    {
+        return \hex2bin($this->hex);
+    }
 }

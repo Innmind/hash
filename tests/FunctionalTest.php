@@ -35,6 +35,10 @@ class FunctionalTest extends TestCase
                     \hash_file($hash->toString(), 'fixtures/'.$file->name()->toString()),
                     $hash->ofFile($file)->hex(),
                 );
+                $this->assertSame(
+                    \hex2bin(\hash_file($hash->toString(), 'fixtures/'.$file->name()->toString())),
+                    $hash->ofFile($file)->binary(),
+                );
             });
     }
 }
