@@ -8,8 +8,12 @@ namespace Innmind\Hash;
  */
 final class Value
 {
+    /** @var non-empty-string */
     private string $hex;
 
+    /**
+     * @param non-empty-string $hex
+     */
     private function __construct(string $hex)
     {
         $this->hex = $hex;
@@ -17,12 +21,17 @@ final class Value
 
     /**
      * @psalm-pure
+     *
+     * @param non-empty-string $hex
      */
     public static function of(string $hex): self
     {
         return new self($hex);
     }
 
+    /**
+     * @return non-empty-string
+     */
     public function hex(): string
     {
         return $this->hex;

@@ -28,6 +28,7 @@ final class Incremental
      */
     public function add(Str $chunk): self
     {
+        /** @psalm-suppress ImpureFunctionCall */
         $_ = \hash_update($this->context, $chunk->toString());
 
         return $this;
