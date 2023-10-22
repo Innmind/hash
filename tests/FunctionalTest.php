@@ -22,6 +22,7 @@ class FunctionalTest extends TestCase
     public function testHash()
     {
         $files = Filesystem::mount(Path::of('fixtures/'))
+            ->root()
             ->all()
             ->toList();
 

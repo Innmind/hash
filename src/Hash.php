@@ -3,10 +3,7 @@ declare(strict_types = 1);
 
 namespace Innmind\Hash;
 
-use Innmind\Filesystem\{
-    File,
-    Chunk,
-};
+use Innmind\Filesystem\File;
 use Innmind\Immutable\{
     Sequence,
     Str,
@@ -27,7 +24,7 @@ enum Hash
     public function ofContent(File\Content $content): Value
     {
         return $this->ofSequence(
-            (new Chunk)($content),
+            $content->chunks(),
         );
     }
 
