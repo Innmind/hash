@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+- `Innmind\Hash\Hash::sha384`
+
 ## 1.5.0 - 2023-10-22
 
 ### Changed
