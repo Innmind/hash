@@ -4,10 +4,7 @@ declare(strict_types = 1);
 namespace Tests\Innmind\Hash;
 
 use Innmind\Hash\Hash;
-use Innmind\Filesystem\{
-    Adapter\Filesystem,
-    Directory,
-};
+use Innmind\Filesystem\Adapter\Filesystem;
 use Innmind\Url\Path;
 use PHPUnit\Framework\TestCase;
 use Innmind\BlackBox\{
