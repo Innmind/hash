@@ -39,6 +39,7 @@ final class Value
 
     public function binary(): string
     {
+        /** @var string */
         return \hex2bin($this->hex);
     }
 }

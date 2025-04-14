@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.7.0 - 2025-04-14
+
+### Added
+
+- Support for `innmind/filesystem:~8.0:`
+
+## 1.6.0 - 2024-07-25
+
+### Added
+
+- `Innmind\Hash\Hash::sha384`
+
 ## 1.5.0 - 2023-10-22
 
 ### Changed
