@@ -28,8 +28,8 @@ class FunctionalTest extends TestCase
 
         $this
             ->forAll(
-                Set\Elements::of(...Hash::cases()),
-                Set\Elements::of(...$files),
+                Set::of(...Hash::cases()),
+                Set::of(...$files),
             )
             ->then(function($hash, $file) {
                 $this->assertSame(
