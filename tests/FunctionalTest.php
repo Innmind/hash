@@ -6,9 +6,9 @@ namespace Tests\Innmind\Hash;
 use Innmind\Hash\Hash;
 use Innmind\Filesystem\Adapter\Filesystem;
 use Innmind\Url\Path;
-use PHPUnit\Framework\TestCase;
 use Innmind\BlackBox\{
     PHPUnit\BlackBox,
+    PHPUnit\Framework\TestCase,
     Set,
 };
 
