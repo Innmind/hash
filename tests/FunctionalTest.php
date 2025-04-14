@@ -6,9 +6,9 @@ namespace Tests\Innmind\Hash;
 use Innmind\Hash\Hash;
 use Innmind\Filesystem\Adapter\Filesystem;
 use Innmind\Url\Path;
-use PHPUnit\Framework\TestCase;
 use Innmind\BlackBox\{
     PHPUnit\BlackBox,
+    PHPUnit\Framework\TestCase,
     Set,
 };
 
@@ -25,8 +25,8 @@ class FunctionalTest extends TestCase
 
         $this
             ->forAll(
-                Set\Elements::of(...Hash::cases()),
-                Set\Elements::of(...$files),
+                Set::of(...Hash::cases()),
+                Set::of(...$files),
             )
             ->then(function($hash, $file) {
                 $this->assertSame(
