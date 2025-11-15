@@ -16,19 +16,19 @@ class FunctionalTest extends TestCase
 {
     use BlackBox;
 
-    public function testHash()
+    public function testHash(): BlackBox\Proof
     {
         $files = Filesystem::mount(Path::of('fixtures/'))
             ->root()
             ->all()
             ->toList();
 
-        $this
+        return $this
             ->forAll(
                 Set::of(...Hash::cases()),
                 Set::of(...$files),
             )
-            ->then(function($hash, $file) {
+            ->prove(function($hash, $file) {
                 $this->assertSame(
                     \hash_file($hash->toString(), 'fixtures/'.$file->name()->toString()),
                     $hash->ofFile($file)->hex(),
