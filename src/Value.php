@@ -8,15 +8,11 @@ namespace Innmind\Hash;
  */
 final class Value
 {
-    /** @var non-empty-string */
-    private string $hex;
-
     /**
      * @param non-empty-string $hex
      */
-    private function __construct(string $hex)
+    private function __construct(private string $hex)
     {
-        $this->hex = $hex;
     }
 
     /**
@@ -24,6 +20,7 @@ final class Value
      *
      * @param non-empty-string $hex
      */
+    #[\NoDiscard]
     public static function of(string $hex): self
     {
         return new self($hex);
@@ -32,11 +29,13 @@ final class Value
     /**
      * @return non-empty-string
      */
+    #[\NoDiscard]
     public function hex(): string
     {
         return $this->hex;
     }
 
+    #[\NoDiscard]
     public function binary(): string
     {
         /** @var string */

@@ -7,13 +7,11 @@ use Innmind\Immutable\Str;
 
 final class Incremental
 {
-    private \HashContext $context;
-
-    private function __construct(\HashContext $context)
+    private function __construct(private \HashContext $context)
     {
-        $this->context = $context;
     }
 
+    #[\NoDiscard]
     public static function start(Hash $hash): self
     {
         return new self(\hash_init($hash->toString()));
@@ -26,6 +24,7 @@ final class Incremental
      *
      * @psalm-external-mutation-free
      */
+    #[\NoDiscard]
     public function add(Str $chunk): self
     {
         /** @psalm-suppress ImpureFunctionCall */
@@ -39,6 +38,7 @@ final class Incremental
      *
      * @psalm-external-mutation-free
      */
+    #[\NoDiscard]
     public function finish(): Value
     {
         return Value::of(\hash_final($this->context));

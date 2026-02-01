@@ -4,7 +4,7 @@ declare(strict_types = 1);
 namespace Tests\Innmind\Hash;
 
 use Innmind\Hash\Hash;
-use Innmind\Filesystem\Adapter\Filesystem;
+use Innmind\Filesystem\Adapter;
 use Innmind\Url\Path;
 use Innmind\BlackBox\{
     PHPUnit\BlackBox,
@@ -16,19 +16,20 @@ class FunctionalTest extends TestCase
 {
     use BlackBox;
 
-    public function testHash()
+    public function testHash(): BlackBox\Proof
     {
-        $files = Filesystem::mount(Path::of('fixtures/'))
+        $files = Adapter::mount(Path::of('fixtures/'))
+            ->unwrap()
             ->root()
             ->all()
             ->toList();
 
-        $this
+        return $this
             ->forAll(
                 Set::of(...Hash::cases()),
                 Set::of(...$files),
             )
-            ->then(function($hash, $file) {
+            ->prove(function($hash, $file) {
                 $this->assertSame(
                     \hash_file($hash->toString(), 'fixtures/'.$file->name()->toString()),
                     $hash->ofFile($file)->hex(),
