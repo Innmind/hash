@@ -24,6 +24,7 @@ final class Value
      *
      * @param non-empty-string $hex
      */
+    #[\NoDiscard]
     public static function of(string $hex): self
     {
         return new self($hex);
@@ -32,11 +33,13 @@ final class Value
     /**
      * @return non-empty-string
      */
+    #[\NoDiscard]
     public function hex(): string
     {
         return $this->hex;
     }
 
+    #[\NoDiscard]
     public function binary(): string
     {
         /** @var string */
