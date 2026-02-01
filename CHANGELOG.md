@@ -1,5 +1,12 @@
 # Changelog
 
+## [Unreleased]
+
+### Changed
+
+- Requires PHP `8.4`
+- Requires `innmind/filesystem:~9.0`
+
 ## 1.7.0 - 2025-04-14
 
 ### Added
