@@ -8,15 +8,11 @@ namespace Innmind\Hash;
  */
 final class Value
 {
-    /** @var non-empty-string */
-    private string $hex;
-
     /**
      * @param non-empty-string $hex
      */
-    private function __construct(string $hex)
+    private function __construct(private string $hex)
     {
-        $this->hex = $hex;
     }
 
     /**

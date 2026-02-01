@@ -7,11 +7,8 @@ use Innmind\Immutable\Str;
 
 final class Incremental
 {
-    private \HashContext $context;
-
-    private function __construct(\HashContext $context)
+    private function __construct(private \HashContext $context)
     {
-        $this->context = $context;
     }
 
     #[\NoDiscard]
